@@ -18,19 +18,20 @@ Quandl.api_key("gs9s3mNF22osh3Phkdet")
 Capital_Inicial <- 10000
 
 funcion <- function(i){
-  f<-paste("IVV_holdings_",i,".csv",header = T, sep = ",")
-  datos_ETF <- read.csv(f)
+  f<-paste("Datos/IVV_holdings_",i, ".csv", sep = "")
+  datos_ETF <- read.csv(f, header = FALSE, row.names = NULL, skip = 10,
+                        stringsAsFactors = FALSE)
   
-  primero<-which(x=datos_ETF[,1]== "Ticker")
-  ultimo<-length(datos_ETF[,1])
+  # primero<-which(x=datos_ETF[,1]== "Ticker")
+  # ultimo<-length(datos_ETF[,1])
+  # 
+  # tk <- datos_ETF[(primero+1):ultimo,1]
+  # w <- as.numeric(datos_ETF[(primero+1):ultimo,4])
+  # date <- datos_ETF[2,2]
+  # price <- as.numeric(datos_ETF[(primero+1):ultimo,5])
+  # titulos <- as.numeric(datos_ETF[,6])
   
-  tk <- datos_ETF[(primero+1):ultimo,1]
-  w <- as.numeric(datos_ETF[(primero+1):ultimo,4])
-  date <- datos_ETF[2,2]
-  price <- as.numeric(datos_ETF[(primero+1):ultimo,5])
-  titulos <- as.numeric(datos_ETF[,6])
-  
-  return(data.frame(tk,w,date,price,titulos))
+  return(datos_ETF)
 }
 
 datos<- list()
@@ -47,6 +48,4 @@ Bajar_Precios <- function(c, tk, Fecha_In, Fecha_Fn) {
 
 cs<-c("adj_close","ticker","date")
 
-#valentina
-#rueda rios valentina
-#bbssjfhdhf
+

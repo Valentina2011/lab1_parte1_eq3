@@ -49,3 +49,4 @@ cs<-c("adj_close","ticker","date")
 
 #valentina
 #rueda rios valentina
+#bbssjfhdhf

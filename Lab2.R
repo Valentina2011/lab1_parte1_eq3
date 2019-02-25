@@ -48,3 +48,4 @@ Bajar_Precios <- function(c, tk, Fecha_In, Fecha_Fn) {
 cs<-c("adj_close","ticker","date")
 
 #valentina
+#rueda rios valentina
